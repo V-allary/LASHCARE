@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lashescare</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const heroCarousel = document.querySelector('#heroCarousel');
+    
+        if (heroCarousel) {
+          new bootstrap.Carousel(heroCarousel, {
+            interval: 3000, 
+            pause: false,     
+            ride: 'carousel', 
+            wrap: true       
+          });
+        }
+      });
+    </script>
+</head>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+<body class="page-with-navbar">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg  navbar-transparent  fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-3 position-relative">
+        <a class="navbar-brand fw-bold" href="#home">
+            <img src="lashcarelogo.jpeg" height="55"  width="55" class="img-fluid" class="me-2"> 
+            <span class="navbar-center-text">
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#nav"
+        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="#home" class="nav-link text-dark">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link text-dark">About Us</a></li>
+                <li class="nav-item"><a href="#academy" class="nav-link text-dark">La Academy</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link text-dark">Services</a></li>
+                <li class="nav-item"><a href="#blog" class="nav-link text-dark">Blog</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link text-dark">Gallery</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link text-dark">Contact info</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero-section">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+<div class="carousel-indicators">
+  <button type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"></button>
+
+  <button type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+
+  <button type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+</div>
+
+      <div class="carousel-item active">
+        <div class="hero-slide hero-1"></div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="hero-slide hero-2"></div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="hero-slide hero-3"></div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ICON SERVICES SECTION -->
+<section class="icon-services">
+  <div class="container">
+    <div class="row text-center justify-content-center">
+
+      <!-- Eyelash Extensions -->
+      <div class="col-md-4 mb-5" data-aos="fade-up">
+        <div class="icon-box">
+          <i class="bi bi-eye"></i>
+          <h5>Eyelash Extensions</h5>
+          <p>
+            Discover a curated selection of lash extension styles tailored for every look and occasion.
+          </p>
+          <a href="booking.html">BOOK NOW →</a>
+        </div>
+      </div>
+
+      <!-- Lash Refill -->
+      <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box">
+          <i class="bi bi-arrow-repeat"></i>
+          <h5>Lash Infill Services</h5>
+          <p>
+            Preserve the beauty and fullness of your lash extensions with our professional refill treatments.
+          </p>
+          <a href="booking.html">BOOK NOW →</a>
+        </div>
+      </div>
+
+      <!-- House Calls -->
+      <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box">
+          <i class="bi bi-house-heart"></i>
+          <h5>House Calls</h5>
+          <p>
+            Experience premium lash and beauty treatments in the comfort of your home — professional, safe, and effortless.
+          </p>
+          <a href="booking.html">BOOK NOW →</a>
+        </div>
+      </div>
+
+      <!-- Lash Removal -->
+      <div class="col-md-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-box">
+          <i class="bi bi-x-circle"></i>
+          <h5>Lashes Removal</h5>
+          <p>
+            Safe and gentle removal of lash extensions without
+            damaging your natural lashes.
+          </p>
+          <a href="booking.html">BOOK NOW →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!----====ABOUT US=====-->
+<section id="about"  class="about-editorial">
+  <div class="container-fluid">
+    <div class="row align-items-center  bg-white ">
+
+      <!-- LEFT IMAGE -->
+      <div class="col-md-3 about-img">
+        <img src="picture12.jpeg" alt="La Lashes Model">
+      </div>
+
+      <!-- CENTER CONTENT -->
+      <div class="col-md-6 text-center about-content">
+        <h2>LASHCARE</h2>
+        <p>
+         At LashCare offers premium individual eyelash extension services designed for clients who value precision, customization, and long-lasting results. Every set is tailored to the client’s eye shape, lifestyle, and desired aesthetic, using high-quality products and professional application techniques to ensure comfort, minimal irritation, and a refined, elegant finish.
+          <br><br>
+          Then you can list classic set, Hybrid set, volume set, Mega volume set and Whispy set.
+
+ 
+        </p>
+
+        <div class="about-mark">
+          <span></span>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-md-3 about-img">
+        <img src="picture13.jpeg" alt="La Lashes Model">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="academy" class="academy-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT CONTENT -->
+      <div class="col-md-6 academy-content">
+        <h2>Lashcare Academy</h2>
+        <p>
+          Lashcare Academy Nairobi is a professional beauty training academy specializing in individual eyelash extensions. We provide structured, hands-on training led by experienced instructors, combining technical mastery, hygiene standards, and business knowledge. 
+          <br><br>
+          Our programs are designed to produce competent, confident lash technicians ready for the luxury beauty market.
+ 
+        </p>
+
+        <ul class="academy-list">
+          <li>✔ Beginner Lash Training</li>
+          <li>✔ Advanced Lash Techniques</li>
+          <li>✔ Certification Upon Completion</li>
+          <li>✔ Ongoing Mentorship & Support</li>
+        </ul>
+        <a href="academy-booking.html" class="academy-btn">ENROLL NOW</a>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-md-6 academy-image">
+        <img src="training.jpeg" alt="La Lashes Academy Training">
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="container text-center">
+    <h2 data-aos="fade-up">Our Services</h2>
+
+    <div class="row mt-5">
+
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="service-card">
+          <div class="service-img">
+          <img src="lashcarepic1.jpeg" alt="Classic Lashes">
+          </div>
+          <h5>Classic Lash Set</h5>
+          <p>Natural, elegant one-to-one lash application.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-img">
+          <img src="lashcarepic2.jpeg" alt="Hybrid Lashes">
+          </div>
+          <h5>Hybrid Lash Set</h5>
+          <p>A blend of classic and volume for soft fullness.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-img">
+          <img src="lashcarepic6.jpeg" alt="Wispy Lashes">
+          </div>
+          <h5>Wispy Lash Set</h5>
+          <p>Textured, feathery lashes with dimension.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-4" data-aos="fade-up">
+        <div class="service-card"> 
+          <div class="service-img">
+          <img src="lashcarepic5.jpeg" alt=" Lashes">
+          </div>
+          <h5>Volume lashes</h5>
+          <p> Classic Volume lashes .</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BLOG SECTION -->
+<section  id="blog"  class="blog-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2>From Our Blog</h2>
+      <p class="blog-intro">
+        Beauty tips, lash care advice, and insights from La Lashes by Husna.
+      </p>
+    </div>
+
+    <div id="blogCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcareblog1.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Lash Aftercare Tips</h5>
+                  <p>How to keep your lash extensions flawless for longer.</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcareblog2.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Are Lash Extensions Dangerous?</h5>
+                  <p>The truth salons don’t always tell you.</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcareblog3.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Luxury vs Budget Lash Salons</h5>
+                  <p>What you need to know before booking.</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SLIDE 2 (duplicate or new posts) -->
+        <div class="carousel-item">
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcareblog4.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Common Lash Mistakes</h5>
+                  <p>Habits that secretly damage your lashes.</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcareblog5.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Choosing the Right Lash Style</h5>
+                  <p>Classic, hybrid, wispy or volume?</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="blog-card">
+                <img src="lashcarepic3.jpeg" alt="">
+                <div class="blog-content">
+                  <span class="blog-date">june</span>
+                  <h5>Lash Training Explained</h5>
+                  <p>Why professional certification matters.</p>
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="blog-card">
+                  <img src="lashcareblog7.jpeg" alt="">
+                  <div class="blog-content">
+                    <span class="blog-date">june</span>
+                    <h5>Lash Care</h5>
+                    <p> Helpfull Tip.</p>
+                    <a href="#">Read More →</a>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLS -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+<!-- GALLERY SECTION -->
+<section id="gallery"  class="gallery-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2>Testimony</h2>
+      <p class="gallery-intro">
+        A glimpse into our lash artistry, brow perfection, and beauty transformations.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Gallery Item -->
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="testimonylashcare.jpeg" alt="A Happy clients Feedback">
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="gallery7.jpeg" alt="Hybrid Lashes">
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="gallery4.jpeg" alt="Volume Lashes">
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="classicset.jpeg" alt="Brow Tinting">
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="gallery6.jpeg" alt="Wispy Lashes">
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="gallery-item">
+          <img src="gallery2.jpeg" alt="Lash Training Session">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+ <!-- LOCATION -->
+ <section id="location" class="location-section">
+  <div class="container text-center">
+    <h2 data-aos="fade-up">Our Location</h2>
+    <p>We are Located at Diamond Plaza 1 , New Wing – 2nd Floor, In Parklands, Nairobi Area.</p>
+    <!-- Maps embed -->
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.66625795481!2d36.81050026906747!3d-1.258278535625976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10c6750af37d%3A0x298e7b10bbaec640!2sDiamond%20Plaza%2C%204th%20Parklands%20Ave%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1704598835818!5m2!1sen!2ske"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  </div>
+</section> 
+
+ <!-- FAINT DIVIDER -->
+<div class="section-divider"></div>
+
+<!-- CONTACT + FOOTER WRAPPER -->
+<section class="contact-footer-wrapper">
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="container text-center">
+      <h2>Contact Us</h2>
+      <p class="contact-intro">
+        Get in touch with Lashcare for bookings and inquiries.
+      </p>
+
+      <div class="contact-details">
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Adlife Plaza Kilimani, – 1st Floor, Nairobi Kenya
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +254 XXX XXX XXX
+        </p>
+
+        <p>
+          <i class="fa-brands fa-whatsapp"></i>
+          +254 XXX XXX XXX
+        </p>
+
+      </div>
+      <!-- OPENING HOURS -->
+<div class="opening-hours">
+  <p>
+    <i class="fa-regular fa-clock"></i>
+    <strong>Opening Hours</strong>
+  </p>
+  <p>Monday – Saturday: 9:00 AM – 7:00 PM</p>
+  <p>Sunday: Closed</p>
+</div>
+
+      <!-- SOCIAL ICONS -->
+      <div class="contact-socials">
+        <a href="https://www.instagram.com/lashcarekenya?igsh=MXNiNm55Y3ExeHE0cA==" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Lashcare. All Rights Reserved.</p>
+  </footer>
+
+</section>
+
+<!-- BACK TO TOP -->
+<button id="backToTop">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+</section>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration:1000, once:true });</script>
+
+</body>
+</html>

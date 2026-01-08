@@ -1,0 +1,537 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .page-with-navbar {
+    margin-top: 80px;
+  }
+  
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* HERO – FINAL PROFESSIONAL FIX */
+  .hero-section {
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .hero-slide {
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* HERO IMAGES */
+  .hero-1 {
+    background-image: url("lashcarehero1.jpeg");
+  }
+  
+  .hero-2 {
+    background-image: url("lashcarehero2re.jpeg");
+  }
+  
+  .hero-3 {
+    background-image: url("lashcarehero3.jpeg");
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .hero-section,
+    .hero-slide {
+      height: 100vh;
+      background-position: center top;
+  
+    }
+  }
+  /* HERO DOTS STYLING */
+  .carousel-indicators [data-bs-target] {
+    background-color: #d80d5b;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  /* HERO ZOOM IN & OUT EFFECT */
+  .hero-slide {
+    animation: heroZoomInOut 16s ease-in-out infinite;
+  }
+  
+  @keyframes heroZoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .carousel-item {
+    overflow: hidden;
+  }
+  /* SERVICES */
+  .services-section {
+    padding: 100px 0;
+  }
+  
+  .service-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .service-card h5 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .service-card p {
+    color: #777;
+    font-size: 14px;
+  }
+   
+  .service-card {
+    text-align: center;
+  }
+  
+  .service-img {
+    width: 100%;
+    height: 420px;               
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .service-img {
+      height: 300px;
+    }
+  }
+  
+   /* BOOKING PAGES */
+  .booking-page,
+  .academy-booking-page {
+    min-height: 100vh;
+    padding: 120px 0;
+    background: #f7f2ec;
+  }
+  
+  .booking-page h1,
+  .academy-booking-page h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #6d2e46;
+  }
+  
+  .booking-intro {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 35px;
+  }
+  
+  .booking-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+  }
+  
+  .booking-form .form-control {
+    font-size: 14px;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #6d2e46;
+    text-decoration: none;
+  }
+  .booking-page,
+  .academy-booking-page {
+    display: flex;
+    align-items: center;
+  }
+  /* LOCATION */
+  .location-section {
+    padding: 80px 0;
+  }
+  
+  /* FOOTER */
+  .footer {
+    background: #111;
+    color: #fff;
+    padding: 20px;
+  }
+  /* ICON SERVICES SECTION */
+  .icon-services {
+    background: #f7f2ec; /* soft nude */
+    padding: 90px 0;
+  }
+  
+  .icon-box {
+    max-width: 320px;
+    margin: auto;
+  }
+  
+  .icon-box i {
+    font-size: 42px;
+    color:#b1074842;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .icon-box h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .icon-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #777;
+  }
+  
+  .icon-box a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    text-decoration: none;
+    color:#6d2e46;
+    font-weight: 500;
+  }
+  .icon-services .row{
+    justify-content: center;
+  }
+  .icon-services .row{
+    justify-content: centre;
+  }
+  /* ABOUT EDITORIAL SECTION */
+  .about-editorial {
+    background: #f7f2ec;
+    padding: 120px 0;
+  }
+  
+  .about-img img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+  }
+  
+  .about-content {
+    padding: 0 40px;
+  }
+  
+  .about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #6d2e46;
+  }
+  
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  
+  .about-mark {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-mark span {
+    width: 50px;
+    height: 2px;
+    background: #b48b7d;
+    display: inline-block;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 991px) {
+    .about-img img {
+      height: 380px;
+      margin-bottom: 20px;
+    }
+  
+    .about-content {
+      padding: 30px 15px;
+    }
+  }
+  /* ACADEMY SECTION */
+  .academy-section {
+    padding: 120px 0;
+    background: #ffffff;
+  }
+  
+  .academy-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #6d2e46;
+  }
+  
+  .academy-content p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #666;
+    max-width: 520px;
+  }
+  
+  .academy-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+  }
+  
+  .academy-list li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .academy-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #e3aac0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  
+  .academy-btn:hover {
+    background: #b48b7d;
+    color: #fff;
+  }
+  
+  .academy-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 991px) {
+    .academy-image img {
+      height: 380px;
+      margin-top: 30px;
+    }
+  }
+  /* BLOG SECTION */
+  .blog-section {
+    padding: 120px 0;
+    background: #fff;
+  }
+  
+  .blog-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #6d2e46;
+  }
+  
+  .blog-intro {
+    font-size: 15px;
+    color: #777;
+  }
+  
+  .blog-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .blog-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  
+  .blog-content {
+    padding: 25px;
+  }
+  
+  .blog-date {
+    font-size: 12px;
+    color: #b48b7d;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  .blog-content h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .blog-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+  }
+  
+  .blog-content a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #6d2e46;
+    font-weight: 500;
+  }
+  
+  /* hide controls on mobile */
+  @media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+      display: none;
+    }
+  }
+  /* GALLERY SECTION */
+  .gallery-section {
+    padding: 120px 0;
+    background: #f7f2ec;
+  }
+  
+  .gallery-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #6d2e46;
+    margin-bottom: 10px;
+  }
+  
+  .gallery-intro {
+    font-size: 15px;
+    color: #777;
+  }
+  
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+   /* FAINT DIVIDER LINE */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: #e0e0e0;
+  }
+  
+  /* CONTACT + FOOTER WRAPPER */
+  .contact-footer-wrapper {
+    background: #f7f2ec;
+  }
+  
+  /* CONTACT SECTION */
+  .contact-section {
+    padding: 100px 0 60px;
+  }
+  
+  .contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #6d2e46;
+    margin-bottom: 15px;
+  }
+  
+  .contact-intro {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* CONTACT DETAILS */
+  .contact-details p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .contact-details i {
+    color: #6d2e46;
+    margin-right: 8px;
+  }
+  
+  /* SOCIAL ICONS */
+  .contact-socials {
+    margin-top: 25px;
+  }
+  
+  .contact-socials a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #6d2e46;
+    transition: opacity 0.3s ease;
+  }
+  
+  .contact-socials a:hover {
+    opacity: 0.6;
+  }
+  
+  /* FOOTER */
+  .footer {
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background: transparent;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  /* BACK TO TOP BUTTON */
+  #backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #6d2e46;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+  }
+  
+  /* OPENING HOURS */
+  .opening-hours {
+    margin-top: 25px;
+  }
+  
+  .opening-hours p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  
+  .opening-hours i {
+    color: #6d2e46;
+    margin-right: 8px;
+  }
