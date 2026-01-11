@@ -10,7 +10,7 @@ body {
     font-family: 'Playfair Display', serif;
   }
   
-  /* HERO – FINAL PROFESSIONAL FIX */
+  /* HERO  */
   .hero-section {
     width: 100%;
     height: 90vh;
@@ -35,7 +35,7 @@ body {
   }
   
   .hero-3 {
-    background-image: url("lashcarehero3.jpeg");
+    background-image: url("lashcarehero3re.jpeg");
   }
   
   /* MOBILE */
@@ -162,6 +162,65 @@ body {
     display: flex;
     align-items: center;
   }
+  /* BOOKING HERO */
+.booking-hero {
+    background-image: url("lashcarehero3.jpeg");  
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    position: relative;
+  }
+  
+  .booking-hero-overlay {
+    background: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .booking-hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .booking-hero p {
+    font-size: 15px;
+    color: #eee;
+  }
+  
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+    .booking-hero {
+      height: 50vh;
+    }
+  
+    .booking-hero h1 {
+      font-size: 28px;
+    }
+  }
+  /* ACADEMY HERO */
+.academy-hero {
+    background-image: url("lashcareacademyhero.jpeg"); /* change image */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+  }
+  
+  .academy-hero-overlay {
+    background: rgba(0, 0, 0, 0.25); /* subtle overlay */
+    height: 100%;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .academy-hero {
+      height: 50vh;
+    }
+  }
   /* LOCATION */
   .location-section {
     padding: 80px 0;
@@ -172,51 +231,96 @@ body {
     background: #111;
     color: #fff;
     padding: 20px;
-  }
-  /* ICON SERVICES SECTION */
-  .icon-services {
-    background: #f7f2ec; /* soft nude */
-    padding: 90px 0;
+  } 
+   
+  
+   /* ICON SERVICES – BASE */
+.icon-services {
+    padding: 80px 0;
+    background: #faf7f4;
   }
   
   .icon-box {
-    max-width: 320px;
-    margin: auto;
+    padding: 30px 25px;
+    border-radius: 16px;
+    background: transparent;
   }
   
   .icon-box i {
     font-size: 42px;
-    color:#b1074842;
-    margin-bottom: 20px;
+    color: #7a5c48;
+    margin-bottom: 15px;
     display: inline-block;
   }
   
   .icon-box h5 {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
   
   .icon-box p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #777;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
   }
   
   .icon-box a {
-    display: inline-block;
-    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
     font-size: 13px;
+    letter-spacing: 2px;
     text-decoration: none;
-    color:#6d2e46;
-    font-weight: 500;
+    color: #6d2e46;
   }
-  .icon-services .row{
-    justify-content: center;
+  
+  .icon-box a:hover {
+    text-decoration: underline;
   }
-  .icon-services .row{
-    justify-content: centre;
+  
+  @media (max-width: 768px) {
+  
+    .icon-services .row {
+      text-align: left !important;
+    }
+  
+    .icon-services .col-md-4 {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .icon-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 0;
+      max-width: 100%;
+    }
+  
+    .icon-box i {
+      font-size: 36px;
+      margin-top: 5px;
+    }
+  
+    .icon-box h5 {
+      font-size: 20px;
+    }
+  
+    .icon-box p {
+      font-size: 14px;
+      max-width: 100%;
+    }
+  
+    .icon-box a {
+      margin-top: 10px;
+    }
+  
   }
+   
   /* ABOUT EDITORIAL SECTION */
   .about-editorial {
     background: #f7f2ec;
@@ -534,4 +638,123 @@ body {
   .opening-hours i {
     color: #6d2e46;
     margin-right: 8px;
+  }
+  /* PAYMENT METHOD */
+.payment-method {
+    margin: 30px 0;
+    text-align: left;
+  }
+  
+  .payment-method h6 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #6d2e46;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .payment-option input {
+    margin-right: 8px;
+  }
+  
+  .payment-option img {
+    height: 24px;
+  }
+  .price-box {
+    background: #f7f2ec;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .payment-success {
+    background: #f7f2ec;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+   
+  /* BLOG CONTENT */
+  .blog-content {
+    padding: 80px 0;
+  }
+  
+  .blog-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .blog-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #6d2e46;
+    margin-top: 30px;
+  }
+  
+  .blog-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .blog-closing {
+    font-style: italic;
+    margin-top: 30px;
+  }
+  
+  /* BLOG ACTIONS */
+  .blog-actions {
+    margin-top: 40px;
+  }
+  /* BLOG HERO IMAGE */
+.blog-hero-image {
+    background-image: url("bloglashcarebg.jpeg"); /* change image per blog */
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+  }
+  
+  .blog-hero-overlay {
+    background: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .blog-hero-image h1 {
+    font-family: 'Playfair Display', serif;
+    color:  #3b0e1d;
+    font-size: 38px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .blog-hero-image p {
+    font-size: 14px;
+    color: #dbd5d5;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .blog-hero-image {
+      height: 55vh;
+    }
+  
+    .blog-hero-image h1 {
+      font-size: 28px;
+    }
   }
