@@ -758,3 +758,20 @@ body {
       font-size: 28px;
     }
   }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999; /* CRITICAL */
+  }
+  .blog-hero-image,
+.academy-hero-image,
+.page-hero,
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+.blog-hero-overlay,
+.hero-overlay {
+  z-index: 0;
+}
