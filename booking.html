@@ -12,9 +12,44 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="lashcarelogo.jpeg" alt="La Lashes by Husna" height="40">
+    </a>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="academy.html">Academy</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <!-- BOOKING HERO -->
+<section class="booking-hero">
+  <div class="booking-hero-overlay">
+    <div class="container text-center">
+      <h1 data-aos="fade-up">Book Your Appointment</h1>
+      <p data-aos="fade-up" data-aos-delay="100">
+        Secure your slot with Lashcare Today
+      </p>
+    </div>
+  </div>
+</section>
 <section class="booking-page">
   <div class="container">
     <div class="row justify-content-center">
@@ -32,50 +67,57 @@
           <input type="email" class="form-control mb-3" placeholder="Email Address" required>
           <input type="tel" class="form-control mb-3" placeholder="Phone Number" required>
 
-          <select class="form-control mb-3" required>
-            <option value="">Select Service</option>
-            <option>Classic Lash Set</option>
-            <option>Hybrid Lash Set</option>
-            <option>Wispy Lash Set</option>
-            <option>Volume Lash Set</option>
-            <option>Mega Volume Lash Set</option>
-            <option>Lashes Removal</option>
-            <option>House Call</option>
+          <select id="lashService" class="form-control mb-3" required>
+            <option value="">Select Lash Service</option>
+          
+            <!-- FULL SETS -->
+            <option value="5500">Classic Lashes – KES 5,500</option>
+            <option value="5500">Subtle Hybrid Lashes – KES 5,500</option>
+            <option value="6000">Hybrid Lashes – KES 6,000</option>
+            <option value="6000">Volume Lashes – KES 6,000</option>
+            <option value="6500">Wispy Lashes – KES 6,500</option>
+            <option value="7000">Mega Volume Lashes – KES 7,000</option>
+          
+            <!-- INFILLS -->
+            <option value="3500">Classic Infill – KES 3,500</option>
+            <option value="3500">Subtle Hybrid Infill – KES 3,500</option>
+            <option value="4000">Volume Infill – KES 4,000</option>
+            <option value="4000">Wispy Infill – KES 4,000</option>
+            <option value="4500">Mega Volume Infill – KES 4,500</option>
+          
+            <!-- EXTRAS -->
+            <option value="1000">Lash Removal – KES 1,000</option>
+            <option value="7000">After-Hours Service (After 6pm) – KES 7,000</option>
+            <option value="500">Brow Threading – KES 500</option>
           </select>
+ 
+          <div class="price-box mb-3">
+            <p><strong>Total:</strong> KES <span id="totalAmount">0</span></p>
+            <p><strong>Pay Now (50%):</strong> KES <span id="depositAmount">0</span></p>
+            <p class="text-muted">Balance payable on appointment day</p>
+          </div>
 
-          <input type="date" class="form-control mb-3" required>
-          <textarea class="form-control mb-4" rows="3" placeholder="Additional Notes (optional)"></textarea>
-
-          <button type="submit" class="btn btn-dark w-100">
-            Submit Booking
+          <button type="button" id="payLashBtn" class="btn btn-dark w-100" disabled>
+            Pay 50% Deposit – Lash Services
           </button>
-
-        </form>
-
+ 
         <a href="index.html" class="back-link">← Back to Home</a>
       </div>
 
     </div>
+
+    <div id="paymentSuccess" class="payment-success d-none">
+      <h3>Payment Successful 🎉</h3>
+      <p>
+        Your deposit has been received successfully.
+        Our team will contact you shortly to confirm the details.
+      </p>
+      <p class="text-muted">
+        Thank you for choosing Lashcare.
+      </p>
+    </div>
   </div>
 </section>
-
-<!-- PAYMENT METHOD -->
-<div class="payment-method">
-  <h6>Select Payment Method</h6>
-
-  <label class="payment-option">
-    <input type="radio" name="payment" required>
-    <img src="images/mpesa.png" alt="M-Pesa">
-    <span>M-Pesa</span>
-  </label>
-
-  <label class="payment-option">
-    <input type="radio" name="payment">
-    <img src="images/visa.png" alt="Visa">
-    <img src="images/mastercard.png" alt="Mastercard">
-    <span>Debit / Credit Card</span>
-  </label>
-</div>
 
 <!-- FAINT DIVIDER -->
 <div class="section-divider"></div>
@@ -138,6 +180,109 @@
   </footer>
 
 </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  
+    const lashServiceSelect = document.getElementById("lashService");
+    const totalAmountEl = document.getElementById("totalAmount");
+    const depositAmountEl = document.getElementById("depositAmount");
+    const payLashBtn = document.getElementById("payLashBtn");
+  
+    const nameInput  = document.querySelector('input[placeholder="Full Name"]');
+    const emailInput = document.querySelector('input[placeholder="Email Address"]');
+    const phoneInput = document.querySelector('input[placeholder="Phone Number"]');
+  
+    if (!lashServiceSelect || !payLashBtn) return;
 
+    lashServiceSelect.addEventListener("change", () => {
+      const total = parseInt(lashServiceSelect.value, 10);
+  
+      if (isNaN(total) || total <= 0) {
+        totalAmountEl.textContent = "0";
+        depositAmountEl.textContent = "0";
+        payLashBtn.disabled = true;
+        return;
+      }
+  
+      const deposit = total / 2;
+  
+      totalAmountEl.textContent = total.toLocaleString();
+      depositAmountEl.textContent = deposit.toLocaleString();
+  
+      payLashBtn.dataset.total = total;
+      payLashBtn.dataset.amount = deposit;
+      payLashBtn.dataset.service =
+        lashServiceSelect.options[lashServiceSelect.selectedIndex].text;
+  
+      payLashBtn.disabled = false;
+    });
+
+    payLashBtn.addEventListener("click", async () => {
+  
+      const name  = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phone = phoneInput.value.trim();
+  
+      if (!name || !email || !phone) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+  
+      if (!payLashBtn.dataset.amount) {
+        alert("Please select a service.");
+        return;
+      }
+  
+      const bookingData = {
+        name,
+        email,
+        phone,
+        service: payLashBtn.dataset.service,
+        total: payLashBtn.dataset.total,
+        deposit: payLashBtn.dataset.amount,
+        type: "lash"
+      };
+  
+      try {
+        const notifyRes = await fetch("/notify-booking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingData)
+        });
+  
+        const notifyData = await notifyRes.json();
+  
+        if (!notifyData.success) {
+          alert("Failed to submit booking. Please try again.");
+          return;
+        }
+        const paymentRes = await fetch("/create-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: bookingData.deposit,
+            phone: bookingData.phone,
+            description: bookingData.service + " deposit"
+          })
+        });
+  
+        const paymentData = await paymentRes.json();
+  
+        if (paymentData.redirect_url) {
+          window.location.href = paymentData.redirect_url;
+        } else {
+          alert("Unable to start payment.");
+        }
+  
+      } catch (error) {
+        console.error(error);
+        alert("Network error. Please try again.");
+      }
+  
+    });
+  
+  });
+  </script>
+ 
 </body>
 </html>

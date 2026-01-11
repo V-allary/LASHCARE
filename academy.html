@@ -7,6 +7,7 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,48 +15,105 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<section class="academy-booking-page">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
   <div class="container">
-    <div class="row justify-content-center">
+    <a class="navbar-brand" href="index.html">
+      <img src="lashcarelogo.jpeg"  height="40">
+    </a>
 
-      <div class="col-md-7 text-center">
-        <h1>Lashcare</h1>
-        <p class="booking-intro">
-          Enroll in our professional lash training programs and gain
-          industry-ready skills, certification, and mentorship.
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="academy.html">Academy</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <!-- ACADEMY HERO (IMAGE ONLY) -->
+<section class="academy-hero">
+  <div class="academy-hero-overlay"></div>
+</section>
+
+  <section  id="academy" class="academy-booking-page">
+    <div class="container">
+      <div class="row justify-content-center">
+  
+        <div class="col-md-7 text-center">
+          <h1>Lashcare Academy</h1>
+  
+          <p class="booking-intro">
+            Enroll in our professional lash training program and gain
+            industry-ready skills, certification, and mentorship.
+          </p>
+  
+          <!-- ACADEMY PRICING -->
+          <div class="price-box mb-4">
+            <p><strong>Total Training Fee:</strong> KES 55,000</p>
+            <p><strong>Pay Now (50% Deposit):</strong> KES 27,500</p>
+            <p class="text-muted">
+              Balance payable later via M-Pesa or cash.
+            </p>
+          </div>
+  
+          <form class="booking-form">
+  
+            <input type="text" class="form-control mb-3" placeholder="Full Name" required>
+            <input type="email" class="form-control mb-3" placeholder="Email Address" required>
+            <input type="tel" class="form-control mb-3" placeholder="Phone Number" required>
+  
+            <select id="academyProgram" class="form-control mb-3" required>
+              <option value="">Select Training Program</option>
+              <option value="55000">Professional Lash Academy – KES 55,000</option>
+            </select>
+  
+            <select class="form-control mb-3" required>
+              <option value="">Preferred Training Mode</option>
+              <option>Group Training</option>
+              <option>One-on-One Training</option>
+            </select>
+  
+            <textarea class="form-control mb-4" rows="3"
+              placeholder="Tell us about your experience level (optional)"></textarea>
+
+              <div class="price-box mb-3">
+                <p><strong>Total:</strong> KES <span id="academyTotal">0</span></p>
+                <p><strong>Pay Now (50%):</strong> KES <span id="academyDeposit">0</span></p>
+                <p class="text-muted">Balance payable before or on training day</p>
+              </div>
+               <button type="button" id="payAcademyBtn" class="btn btn-dark w-100" disabled>
+                Pay 50% Deposit To ENROLL
+               </button>  
+
+               <a href="index.html" class="back-link">← Back to Home</a>
+              
+  
+          </form>
+  
+        </div>
+      </div>
+      <div id="paymentSuccess" class="payment-success d-none">
+        <h3>Payment Successful 🎉</h3>
+        <p>
+          Your deposit has been received successfully.
+          Our team will contact you shortly to confirm the details.
         </p>
-
-        <form class="booking-form">
-
-          <input type="text" class="form-control mb-3" placeholder="Full Name" required>
-          <input type="email" class="form-control mb-3" placeholder="Email Address" required>
-          <input type="tel" class="form-control mb-3" placeholder="Phone Number" required>
-
-          <select class="form-control mb-3" required>
-            <option value="">Select Training Program</option>
-            <option>Beginner Lash Training</option>
-            <option>Advanced Lash Techniques</option>
-            <option>Mega Volume Masterclass</option>
-            <option>One-on-One Private Training</option>
-          </select>
-
-          <select class="form-control mb-3" required>
-            <option value="">Preferred Training Mode</option>
-            <option>Group Training</option>
-            <option>One-on-One Training</option>
-          </select>
-
-          <textarea class="form-control mb-4" rows="3"
-            placeholder="Tell us about your experience level (optional)"></textarea>
-
-          <button type="submit" class="btn btn-dark w-100">
-            Enroll Now
-          </button>
-
-        </form>
-
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <p class="text-muted">
+          Thank you for choosing Lacare.
+        </p>
+      </div>
+    </div>
+  </section>
+         
       </div>
 
     </div>
@@ -123,5 +181,111 @@
 
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  
+     
+    const academySelect = document.getElementById("academyProgram");
+    const academyTotalEl = document.getElementById("academyTotal");
+    const academyDepositEl = document.getElementById("academyDeposit");
+    const payAcademyBtn = document.getElementById("payAcademyBtn");
+  
+    const nameInput  = document.querySelector('input[placeholder="Full Name"]');
+    const emailInput = document.querySelector('input[placeholder="Email Address"]');
+    const phoneInput = document.querySelector('input[placeholder="Phone Number"]');
+  
+    if (!academySelect || !payAcademyBtn) return;
+  
+    academySelect.addEventListener("change", () => {
+      const total = parseInt(academySelect.value, 10);
+  
+      if (isNaN(total) || total <= 0) {
+        academyTotalEl.textContent = "0";
+        academyDepositEl.textContent = "0";
+        payAcademyBtn.disabled = true;
+        return;
+      }
+  
+      const deposit = total / 2;
+  
+      academyTotalEl.textContent = total.toLocaleString();
+      academyDepositEl.textContent = deposit.toLocaleString();
+  
+      payAcademyBtn.dataset.total = total;
+      payAcademyBtn.dataset.amount = deposit;
+      payAcademyBtn.dataset.service =
+        academySelect.options[academySelect.selectedIndex].text;
+  
+      payAcademyBtn.disabled = false;
+    });
+  
+    payAcademyBtn.addEventListener("click", async () => {
+  
+      const name  = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phone = phoneInput.value.trim();
+  
+      if (!name || !email || !phone) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+  
+      if (!payAcademyBtn.dataset.amount) {
+        alert("Please select a training program.");
+        return;
+      }
+  
+      const bookingData = {
+        name,
+        email,
+        phone,
+        service: payAcademyBtn.dataset.service,
+        total: payAcademyBtn.dataset.total,
+        deposit: payAcademyBtn.dataset.amount,
+        type: "academy"
+      };
+  
+      try {
+        const notifyRes = await fetch("/notify-booking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingData)
+        });
+  
+        const notifyData = await notifyRes.json();
+  
+        if (!notifyData.success) {
+          alert("Failed to notify booking. Please try again.");
+          return;
+        }
+        const paymentRes = await fetch("/create-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: bookingData.deposit,
+            phone: bookingData.phone,
+            description: "Academy Training Deposit"
+          })
+        });
+  
+        const paymentData = await paymentRes.json();
+  
+        if (paymentData.redirect_url) {
+          window.location.href = paymentData.redirect_url;
+        } else {
+          alert("Unable to start payment.");
+        }
+  
+      } catch (error) {
+        console.error(error);
+        alert("Network error. Please try again.");
+      }
+  
+    });
+  
+  });
+  </script>
+</body>
+</html>
 </body>
 </html>
